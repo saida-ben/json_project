@@ -1,0 +1,63 @@
+<?xml-stylesheet type="text/xsl" href="affichage.xsl"?>
+
+<Lp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Users.xsd">
+  <Users>
+    <User>
+      <nom>El bouazzaoui</nom>
+      <prenom>ahmad</prenom>
+      <email>ahmad@gmail.com</email>
+      <role>Admin</role>
+    </User>
+    <User>
+      <nom>Said</nom>
+      <prenom>Mohammad</prenom>
+      <email>mohammad@gmail.com</email>
+      <role>Directeur</role>
+    </User>
+    <User>
+      <nom>Elou</nom>
+      <prenom>jamal</prenom>
+      <email>jamal@gmail.com</email>
+      <role>Responsable_filiere</role>
+    </User>
+    <User>
+      <nom>Elou</nom>
+      <prenom>saida</prenom>
+      <email>saida@gmail.com</email>
+      <role>Condidat</role>
+    </User>
+  </Users>
+  <Roles>
+    <Role>
+      <nom>Directeur</nom>
+      <permission>consulter_la_liste_des_condidats</permission>
+    </Role>
+    <Role>
+      <nom>Admin</nom>
+      <permission>creerUser</permission>
+    </Role>
+    <Role>
+      <nom>Responsable_filiere</nom>
+      <permission>accepter_candidat</permission>
+    </Role>
+   
+    <Role>
+      <nom>Condidat</nom>
+      <permission>consulter_demande</permission>
+    </Role>
+  </Roles>
+  <Permissions>
+    <Permission>
+      <nom>consulter_la_liste_des_condidats</nom>
+    </Permission>
+    <Permission>
+      <nom>consulter_demande</nom>
+    </Permission>
+    <Permission>
+      <nom>accepter_candidat</nom>
+    </Permission>
+    <Permission>
+      <nom>creerUser</nom>
+    </Permission>
+  </Permissions>
+</Lp>

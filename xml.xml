@@ -1,0 +1,173 @@
+<?xml-stylesheet type="text/xsl" href="affichage2.xsl"?>
+
+<Condidats xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="lp.xsd">
+  <Condidat etat="pas traiter">
+    <informations_personnelles>
+      <nom>benzariya</nom>
+      <prenom>saida</prenom>
+      <password>ruuuuu</password>
+      <etablissement>EST</etablissement>
+      <ville>Safi</ville>
+      <niveau>DUT</niveau>
+    </informations_personnelles>
+    <informations_generales>
+      <date_naissance>12_03_2003</date_naissance>
+      <adresse>safi</adresse>
+      <code_postal>123</code_postal>
+      <num_tele>0637354609</num_tele>
+      <cne>1</cne>
+      <cni>HH8882</cni>
+      <code_apoge>32344</code_apoge>
+    </informations_generales>
+    <experience>
+      <travail>EST</travail>
+      <nbr_annee>2</nbr_annee>
+    </experience>
+    <Diplome>
+      <diplome_type>BTS-BREVET DE TECHNICIEN SUPERIEUR</diplome_type>
+      <Specialite_diplome>AUDIO VISUEL (OPTION: IMAGE)</Specialite_diplome>
+      <note_diplome>15</note_diplome>
+      <Annee>
+        <note1>12</note1>
+        <classement1>2</classement1>
+        <nbr_condidat1>292</nbr_condidat1>
+        <note2>14</note2>
+        <classement2>23</classement2>
+        <nbr_condidat2>98</nbr_condidat2>
+      </Annee>
+    </Diplome>
+    <bac>
+      <bacfiliere>est</bacfiliere>
+      <bacnote>17</bacnote>
+      <bacannee>2021</bacannee>
+    </bac>
+    <choix_de_filieres_LP>GESTION_COMPTABLE_ET_FINANCIÈRE</choix_de_filieres_LP>
+  </Condidat>
+  <Condidat etat="valide">
+    <informations_personnelles>
+      <nom>ELMANNER</nom>
+      <prenom>Hayat</prenom>
+      <password>riiii</password>
+      <etablissement>ESR</etablissement>
+      <ville>Safi</ville>
+      <niveau>DUT</niveau>
+    </informations_personnelles>
+    <informations_generales>
+      <date_naissance>12-2-2023</date_naissance>
+      <adresse>essaouira</adresse>
+      <code_postal>1234</code_postal>
+      <num_tele>063735469</num_tele>
+      <cne>4545</cne>
+      <cni>j1234</cni>
+      <code_apoge>34</code_apoge>
+    </informations_generales>
+    <experience>
+      <travail>EST</travail>
+      <nbr_annee>3</nbr_annee>
+    </experience>
+    <Diplome>
+      <diplome_type>BTS-BREVET DE TECHNICIEN SUPERIEUR</diplome_type>
+      <Specialite_diplome>AUDIO VISUEL (OPTION: IMAGE)</Specialite_diplome>
+      <note_diplome>17</note_diplome>
+      <Annee>
+        <note1>12</note1>
+        <classement1>2</classement1>
+        <nbr_condidat1>122</nbr_condidat1>
+        <note2>12</note2>
+        <classement2>2</classement2>
+        <nbr_condidat2>222</nbr_condidat2>
+      </Annee>
+    </Diplome>
+    <bac>
+      <bacfiliere>PC</bacfiliere>
+      <bacnote>12</bacnote>
+      <bacannee>2021</bacannee>
+    </bac>
+    <choix_de_filieres_LP>GESTION_COMPTABLE_ET_FINANCIÈRE</choix_de_filieres_LP>
+  </Condidat>
+  <Condidat etat="non valide">
+    <informations_personnelles>
+      <nom>Omaima</nom>
+      <prenom>benz</prenom>
+      <password>rwww</password>
+      <etablissement>ISPITS</etablissement>
+      <ville>SAFI</ville>
+      <niveau>LICENCE</niveau>
+    </informations_personnelles>
+    <informations_generales>
+      <date_naissance>2-03-2000</date_naissance>
+      <adresse>safi</adresse>
+      <code_postal>33444</code_postal>
+      <num_tele>0877666464</num_tele>
+      <cne>4</cne>
+      <cni>2</cni>
+      <code_apoge>844</code_apoge>
+    </informations_generales>
+    <experience>
+      <travail>ipits</travail>
+      <nbr_annee>3</nbr_annee>
+    </experience>
+    <Diplome>
+      <diplome_type>BTS-BREVET DE TECHNICIEN SUPERIEUR</diplome_type>
+      <Specialite_diplome>AUDIO VISUEL (OPTION: IMAGE)</Specialite_diplome>
+      <note_diplome>10</note_diplome>
+      <Annee>
+        <note1>12</note1>
+        <classement1>2</classement1>
+        <nbr_condidat1>122</nbr_condidat1>
+        <note2>15</note2>
+        <classement2>2</classement2>
+        <nbr_condidat2>552</nbr_condidat2>
+      </Annee>
+    </Diplome>
+    <bac>
+      <bacfiliere>pc</bacfiliere>
+      <bacnote>17</bacnote>
+      <bacannee>2022</bacannee>
+    </bac>
+    <choix_de_filieres_LP>GESTION_COMPTABLE_ET_FINANCIÈRE</choix_de_filieres_LP>
+  </Condidat>
+  <Condidat etat="valide">
+    <informations_personnelles>
+      <nom>hanane</nom>
+      <prenom>hanane</prenom>
+      <password>12345</password>
+      <etablissement>ispits</etablissement>
+      <ville>safi</ville>
+      <niveau>dut</niveau>
+    </informations_personnelles>
+    <informations_generales>
+      <date_naissance>12-03-2003</date_naissance>
+      <adresse>safi</adresse>
+      <code_postal>12345</code_postal>
+      <num_tele>2345566</num_tele>
+      <cne>5</cne>
+      <cni>hh4556</cni>
+      <code_apoge>12345</code_apoge>
+    </informations_generales>
+    <experience>
+      <travail>dur</travail>
+      <nbr_annee>2</nbr_annee>
+    </experience>
+    <Diplome>
+      <diplome_type>BTS-BREVET DE TECHNICIEN SUPERIEUR</diplome_type>
+      <Specialite_diplome>ANIMATION TOURISTIQUE</Specialite_diplome>
+      <note_diplome>15</note_diplome>
+      <Annee>
+        <note1>14</note1>
+        <classement1>2</classement1>
+        <nbr_condidat1>16</nbr_condidat1>
+        <note2>5</note2>
+        <classement2>16</classement2>
+        <nbr_condidat2>5</nbr_condidat2>
+      </Annee>
+    </Diplome>
+    <bac>
+      <bacfiliere>pc</bacfiliere>
+      <bacnote>18</bacnote>
+      <bacannee>2020</bacannee>
+    </bac>
+    <choix_de_filieres_LP>GESTION_COMPTABLE_ET_FINANCIÈRE</choix_de_filieres_LP>
+  </Condidat>
+ 
+</Condidats>

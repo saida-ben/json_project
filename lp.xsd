@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+
+<!-- ********************************declaration des types simples *****************************-->
+
+<xs:simpleType name="diplome_type">
+<xs:restriction base="xs:token">
+    <xs:enumeration value="DEUST-DIPLOME D'ETUDES UNIVERSITAIRES SCIENTIFIQUES ET TECHNIQUES"/>
+    <xs:enumeration value="DUT-DIPLOME UNIVERSITAIRE DE TECHNOLOGIE"/>
+    <xs:enumeration value="BTS-BREVET DE TECHNICIEN SUPERIEUR"/>
+    <xs:enumeration value="DTS-DIPLOME DE TECHNICIEN SPECIALISE"/>
+    <xs:enumeration value="CPGE-CLASSES PREPARATOIRES AUX GRANDES ECOLES"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="Specialite_diplome">
+<xs:restriction base="xs:token">
+    <xs:enumeration value="AGENCES DE VOYAGES"/>
+    <xs:enumeration value="AGENCES DE VOYAGES ANIMATION TOURISTIQUE"/>
+    <xs:enumeration value="ASSISTANCE DENTAIRE"/>
+    <xs:enumeration value="AUDIO VISUEL (OPTION: IMAGE)"/>
+    <xs:enumeration value="AUDIO VISUEL (OPTION: MONTAGE)"/>
+    <xs:enumeration value="AUDIO VISUEL (OPTION: SON)"/>
+    <xs:enumeration value="ANIMATION TOURISTIQUE"/>
+    <xs:enumeration value="AUTOMATISATION ET INSTRUMENTATION INDUSTRIELLE"/>
+    <xs:enumeration value="BUREAU D'ETUDE EN CONSTRUCTION METALLIQUE"/>
+    <xs:enumeration value="BUREAU D'ETUDES EN AUTOMOBILE"/>
+    <xs:enumeration value="BUREAU D'ÉTUDES OPTION OUTILLAGE DE PRESSE"/>
+    <xs:enumeration value="CHIMIE CUIR"/>
+    <xs:enumeration value="CHIMIE INDUSTRIELLE"/>
+    <xs:enumeration value="COMMERCE"/>
+    <xs:enumeration value="CONDUCTEUR DE TRAVAUX : TRAVAUX PUBLICS DECORS ET ACCESSOIRES"/>
+    <xs:enumeration value="DECORS ET ACCESSOIRES"/>
+    <xs:enumeration value="DIAGNOSTIC ET ELECTRONIQUE EMBARQUEE"/>
+    <xs:enumeration value="EDUCATEUR SPECIALISE EN PETITE ENFANCE"/>
+    <xs:enumeration value="EFFETS SPECIAUX"/>
+    <xs:enumeration value="ELECTROMECANIQUE DES SYSTEMES AUTOMATISEES"/>
+    <xs:enumeration value="ELECTROMECANIQUE DES SYSTEMES AUTOMATISEES EMBALLAGE ET CONDITIONNEMENT"/>
+    <xs:enumeration value="EMBALLAGE ET CONDITIONNEMENT "/>
+    <xs:enumeration value="FABRICATION EN ELECTRONIQUE"/>
+    <xs:enumeration value="FABRICATION INDUSTRIE AGROALIMENTAIRE FINANCE ET COMPTABILITE"/>
+    <xs:enumeration value="GENIE CIVIL"/>
+    <xs:enumeration value="GENIE CLIMATIQUE GEOMETRE TOPOGRAPHE"/>
+    <xs:enumeration value="GESTION D'ENTREPRISE EQUINE"/>
+    <xs:enumeration value="GESTION DES ENTREPRISES"/>
+    <xs:enumeration value="GESTION HOTELIERE"/>
+    <xs:enumeration value="GROS ŒUVRES"/>
+    <xs:enumeration value="HEBERGEMENT ET RECEPTION"/>
+    <xs:enumeration value="HYGIENE ET QUALITE"/>
+    <xs:enumeration value="INFOGRAPHIE"/>
+    <xs:enumeration value="INDUSTRIE MEUNIERE"/>
+    <xs:enumeration value="DIAGNOSTIC ET ELECTRONIQUE EMBARQUEE EDUCATEUR SPECIALISE EN PETITE ENFANCE EFFETS SPECIAUX"/>
+    <xs:enumeration value="ELECTROMECANIQUE DES SYSTEMES AUTOMATISEES EMBALLAGE ET CONDITIONNEMENT"/>
+    <xs:enumeration value="PRODUCTION GRAPHIQUE PROTHESISTE DENTAIRE QUALITE ET CONTROLE TEXTILE"/>
+    <xs:enumeration value="REGIE ET GESTION DE PRODUCTION"/>
+    <xs:enumeration value="RESPONSABLE D'EXPLOITATION LOGISTIQUE"/>
+    <xs:enumeration value="TECHNICO-COMMERCIAL EN VENTE DE VEHICULES ET PIECES DE RECHANGE"/>
+    <xs:enumeration value="TECHNIQUES D'HABILLEMENT INDUSTRIALISATION"/>
+    <xs:enumeration value="TECHNIQUES DE DEVELOPPEMENT INFORMATIQUE"/>
+    <xs:enumeration value="TECHNIQUES DE DEVELOPPEMENT MULTIMEDIA"/>
+    <xs:enumeration value="TECHNIQUES DE SECRETARIAT DE DIRECTION (TSD)"/>
+    <xs:enumeration value="TECHNIQUES DES RESEAUX INFORMATIQUES"/>
+    <xs:enumeration value="TECHNIQUES DES TELECOMMUNICATION"/>
+    <xs:enumeration value="THERMIQUE INDUSTRIELLE"/>
+    <xs:enumeration value="TRAITEMENT DE SURFACE"/>
+    <xs:enumeration value="TRANSFORMATION DES MATERIAUX COMPOSITES"/>
+    <xs:enumeration value="TS D'EXPLOITATION EN TRANSPORT"/>
+    <xs:enumeration value="TS EN METEOROLOGIE"/>
+    <xs:enumeration value="USINAGE SUR MOCN OPTION METHODE FAO OUTILLAGE DE PRESSE"/>
+    <xs:enumeration value="USINAGE SUR MOCN OPTION USINAGE OUTILLAGE DE PRESSE"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:element name="annees_diplomes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="note" type="xs:decimal"/>
+        <xs:element name="classement" type="xs:integer"/>
+        <xs:element name="nbr_condidat" type="xs:integer"/>
+      </xs:sequence>
+     </xs:complexType>
+</xs:element>
+
+<!-- ***************************** declaration des types complexes ********************************** -->
+
+      <xs:element name="cursus_diplome">
+        <xs:complexType>
+          <xs:sequence>
+              <xs:element name="diplome_type" type="diplome_type"/>
+              <xs:element name="Specialite_diplome" type="Specialite_diplome"/>
+              <xs:element name="Note" type="xs:decimal"/>
+              <xs:element name="annees_diplomes"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+        <xs:element name="experience">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="travail" type="xs:string"/>
+              <xs:element name="nbr_annee" type="xs:integer"/>
+             </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+       
+
+         <xs:element name="bac">
+          <xs:complexType>
+            <xs:sequence>
+            <xs:element name="bacfiliere" type="xs:string"/>
+               <xs:element name="bacnote" type="xs:decimal"/>
+               <xs:element name="bacannee" type="xs:decimal"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+    
+<!-- *********************************** LE CONDIDAT ***********************************-->
+                <xs:element name="informations_personnelles">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nom" type="xs:string"/>
+                        <xs:element name="prenom" type="xs:string"/>
+                        <xs:element name="password" type="xs:string"/>
+                        <xs:element name="etablissement" type="xs:string"/>
+                        <xs:element name="ville" type="xs:string"/>
+                        <xs:element name="niveau" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <xs:element name="informations_generales">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="date_naissance" type="xs:string"/>
+                        <xs:element name="adresse" type="xs:string"/>
+                        <xs:element name="code_postal" type="xs:string"/>
+                        <xs:element name="num_tele" type="xs:string"/>
+                        <xs:element name="cne" type="xs:string"/>
+                        <xs:element name="cni" type="xs:string"/>
+                        <xs:element name="code_apoge" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+
+
+<xs:simpleType name="choix_de_filieres_LP">
+    <xs:restriction base="xs:token">
+        <xs:enumeration value="MÉCATRONIQUE"/>
+        <xs:enumeration value="GESTION_COMPTABLE_ET_FINANCIÈRE"/>
+        <xs:enumeration value="Ingénierie_des_Systèmes_d’information_et_Réseaux"/>
+        <xs:enumeration value="MÉTROLOGIE_QUALITÉ_SÉCURITÉ_ET_ENVIRONNEMENT"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<!-- *********************************** LA RACINE ***********************************-->
+        <xs:element name="Condidats">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Condidat" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+           <xs:key name="refCondidat">
+            <xs:selector xpath="Condidat/informations_generales"/>
+            <xs:field xpath="cne"/>
+        </xs:key>
+        <xs:unique name="uniqueCNE">
+                        <xs:selector xpath="Condidat/informations_generales"/>
+                        <xs:field xpath="cni"/>
+                    </xs:unique>
+                     <xs:unique name="unique_apoge">
+                        <xs:selector xpath="Condidat/informations_generales"/>
+                        <xs:field xpath="code_apoge"/>
+                    </xs:unique>
+        </xs:element>
+<!-- *********************************** Condidat ***********************************-->
+        <xs:element name="Condidat"> 
+          <xs:complexType>
+                 <xs:sequence>
+                   <xs:element ref="informations_personnelles"/>              
+                   <xs:element ref="informations_generales"/>              
+                   <xs:element ref="cursus_diplome"/>
+                   <xs:element ref="experience"/>
+                   <xs:element ref="bac"/>
+                   <xs:element name="choix_de_filieres_LP" type="choix_de_filieres_LP"/> <!-- Changed the name and moved outside the sequence -->
+                 </xs:sequence>
+          </xs:complexType>
+         
+        </xs:element>
+      
+    
+</xs:schema>

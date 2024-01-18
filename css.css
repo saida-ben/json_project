@@ -1,0 +1,41 @@
+
+  
+
+
+
+  button {
+            
+    appearance: none; /* Masquer le style par défaut du navigateur */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 7px;
+    padding: 10px 25px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+                7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+                4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+    background: rgba(243, 143, 72, 0.909);
+  }
+  
+  button:hover {
+    background-color: #97570f;
+  }
+  .button-wrapper {
+    display: flex;
+  }
+  
+  .button-wrapper button:first-child {
+    margin-right: 2px;
+  }
+  
+  .button-wrapper button:last-child {
+    margin-left: 2px;
+  }
