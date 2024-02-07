@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulaire d'ajout d'utilisateur</title>
+  <link rel="stylesheet" href="css.css"> <!-- Ligne pour ajouter la feuille de style externe -->
+</head>
+<body>
+  <h1>Liste de Users</h1>
+  <table id="userTable">
+    <thead>
+      <tr>    
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="userTableBody">
+    </tbody>
+  </table>
+  <button onclick="afficherPopupForm()" style="margin-left: 140px;">Ajouter</button>
+  <div id="popupForm" class="popup">
+    <div id="contenu">
+      <h2>Ajouter un utilisateur</h2>
+      <form id="userForm">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" required/><br/>
+        <label for="prenom">Prénom:</label>
+        <input type="text" id="prenom" required/><br/>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required/><br/>
+        <button type="submit">Ajouter</button>
+      </form>
+      <input type="button" value="Fermer" onclick="cacherPopupForm()"/>
+      <hr/>
+      <div id="resultat"></div>
+    </div>
+  </div>
+
+  <script>
+    // Fonction pour ajouter un utilisateur
+    function ajouterUtilisateur(event) {
+      event.preventDefault(); // Empêcher le rechargement de la page
+  
+      // Récupérer les valeurs du formulaire
+      var nom = document.getElementById('nom').value;
+      var prenom = document.getElementById('prenom').value;
+      var email = document.getElementById('email').value;
+  
+      // Créer un objet utilisateur
+      var newUser = {
+        nom: nom,
+        prenom: prenom,
+        email: email
+      };
+  
+      // Envoi des données au serveur
+      fetch('http://localhost:3000/ajouter-donnee1', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newUser)
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data); // Afficher la réponse du serveur dans la console
+        // Effacer le formulaire après l'ajout
+        document.getElementById('userForm').reset();
+        // Actualiser les données dans le tableau après ajout
+        afficherDonneesUtilisateur();
+      })
+      .catch(error => console.error('Erreur:', error));
+    }
+  
+    // Événement de soumission du formulaire pour ajouter un utilisateur
+    document.getElementById('userForm').addEventListener('submit', ajouterUtilisateur);
+
+    function afficherPopupForm() {
+      var popupForm = document.getElementById("popupForm");
+      popupForm.style.display = "block";
+    }
+    
+    function cacherPopupForm() {
+      var popupForm = document.getElementById("popupForm");
+      popupForm.style.display = "none";
+    }
+    function afficherDonneesUtilisateur() {
+  fetch('Users.json') // Charger le fichier JSON
+    .then(response => response.json()) // Convertir la réponse en JSON
+    .then(data => {
+      const userTableBody = document.getElementById('userTableBody');
+
+      // Effacer le contenu précédent de la table
+      userTableBody.innerHTML = '';
+
+      // Parcourir les données utilisateur et ajouter chaque utilisateur à la table
+      data.forEach(user => {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+          <td>${user.nom}</td>
+          <td>${user.prenom}</td>
+          <td>${user.email}</td>
+          <td><button onclick="supprimerUtilisateur('${user.email}')">Supprimer</button></td>
+        `;
+        userTableBody.appendChild(newRow);
+      });
+    })
+    .catch(error => console.error('Erreur lors du chargement des données :', error));
+}
+
+    // Fonction pour supprimer un utilisateur par email
+    function supprimerUtilisateur(email) {
+      fetch(`http://localhost:3000/supprimer-utilisateur/${encodeURIComponent(email)}`, {
+        method: 'DELETE',
+      })
+      .then(response => {
+        if (response.ok) {
+          console.log(`Utilisateur avec l'email ${email} supprimé avec succès.`);
+          // Actualiser les données après suppression
+          afficherDonneesUtilisateur();
+        } else {
+          console.error(`Une erreur s'est produite lors de la suppression de l'utilisateur avec l'email ${email}.`);
+        }
+      })
+      .catch(error => console.error('Erreur lors de la suppression de l\'utilisateur :', error));
+    }
+    
+    // Appeler la fonction pour afficher les données lors du chargement de la page
+    window.onload = afficherDonneesUtilisateur;
+
+  </script>
+  
+</body>
+</html>
