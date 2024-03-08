@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="./public/css/styles.css"  rel="stylesheet" />
+</head>
+<style>
+    /* CSS personnalisé pour le bouton */
+    .custom-button {
+        background-color: #007bff; /* Couleur de fond bleue */
+        color: #fff; /* Couleur du texte blanc */
+        border: 1px solid #007bff; /* Bordure bleue */
+        padding: 10px 20px; /* Remplissage autour du texte */
+        border-radius: 5px; /* Coins arrondis */
+        text-transform: uppercase; /* Texte en majuscules */
+        font-weight: bold; /* Texte en gras */
+        display: inline-block; /* Affichage en ligne pour limiter la largeur */
+    }
+
+    .custom-button:hover {
+        background-color: #0056b3; /* Bleu plus foncé au survol */
+        border-color: #0056b3; /* Bordure bleue plus foncée au survol */
+    }
+</style>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#!">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Shop in style</h1>
+                <p class="lead fw-normal text-white-50 mb-0">With this shop homepage template</p>
+            </div>
+        </div>
+    </header>
+    <!-- Section-->
+
+    <section class="py-5">
+
+        <div class="">
+            <a class="nav-link custom-button" style="margin-left: 20px;" href="/add">Ajouter une offre</a>
+        </div>
+
+        <div class="container px-4 px-lg-5 mt-5">
+            
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="card-container">
+                <!-- Les cartes seront ajoutées ici par JavaScript -->
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Offre Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Libelle:</strong> <span id="modal-libelle"></span></p>
+                    <p><strong>Code Postal:</strong> <span id="modal-codePostal"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script>
+        function supprimerOffre(offreId) {
+        // Effectuez une requête POST vers le serveur Express pour supprimer l'offre
+        fetch('/supprimer', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: offreId }) // Envoyez l'identifiant de l'offre à supprimer
+        })
+        .then(response => {
+            if (response.ok) {
+                // Mettez à jour l'interface utilisateur ou rechargez la page si nécessaire
+                location.reload(); // Rechargez la page pour afficher les changements
+            } else {
+                console.error('Erreur lors de la suppression de l\'offre');
+            }
+        })
+        .catch(error => console.error('Erreur lors de la suppression de l\'offre:', error));
+    }
+          // Effectuer une requête GET vers le serveur Express pour obtenir les données des offres
+    fetch('/afficher') // Utilisez l'URL de la route Express que vous avez créée
+        .then(response => response.json())
+        .then(data => {
+            // Sélectionnez le conteneur où vous souhaitez afficher les cartes
+            const cardContainer = document.getElementById('card-container');
+
+            // Parcourez les données des offres
+            data.forEach(offre => {
+                // Créez une nouvelle carte HTML
+                const card = document.createElement('div');
+                card.classList.add('col', 'mb-5');
+                card.innerHTML = `
+                    <div class="card h-100">
+                       
+                        <!-- Product image-->
+                        <img class="card-img-top" src="${offre.image}" alt="Product image" />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">${offre.intitule}</h5>
+                                <!-- Product date de création-->
+                                <p>Date de création: ${offre.dateCreation}</p>
+                                <!-- Product description (hidden by default) -->
+                                <p class="offre-description" style="display:none;">${offre.description}</p>
+                                <!-- Product lieuTravail -->
+                                <p class="offre-lieuTravail" style="display:none;">${JSON.stringify(offre.lieuTravail)}</p>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <button class="btn btn-outline-dark mt-auto view-options-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">View options</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                // Ajoutez la carte au conteneur
+                cardContainer.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Erreur lors de la récupération des offres depuis le serveur:', error));
+
+    // Écoutez l'événement clic pour afficher la description de l'offre dans le modèle
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('view-options-btn')) {
+            const lieuTravail = JSON.parse(e.target.closest('.card').querySelector('.offre-lieuTravail').textContent);
+            document.getElementById('modal-libelle').textContent = lieuTravail.libelle;
+            document.getElementById('modal-codePostal').textContent = lieuTravail.codePostal;
+        }
+    });
+</script>
+
+</body>
+</html>

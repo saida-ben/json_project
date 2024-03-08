@@ -1,64 +1,87 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { readFileSync, writeFileSync, existsSync } = require('fs');
-const cors = require('cors');
+const fs = require('fs');
+const path = require('path'); // Importer le module path
+const uniqid = require('uniqid'); // Importer uniqid
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json()); // Ajout de la configuration pour traiter les données JSON
-app.use(cors());
+app.use(bodyParser.json());
 
-// Vérifiez si le fichier Users.json existe, sinon créez-le avec un tableau vide
-if (!existsSync('Users.json')) {
-  writeFileSync('Users.json', '[]');
-}
+// Définir le chemin vers le fichier JSON
+const filePath = 'offres.json';
 
-app.post('/ajouter-donnee1', (req, res) => {
-  const { nom, prenom, email } = req.body; // Récupérer les données utilisateur de la requête
+// Route pour servir la page HTML contenant le formulaire
+app.get('/add', (req, res) => {
+  // Envoyer le fichier HTML contenant le formulaire
+  res.sendFile(path.join(__dirname, 'add.html'));
+});
 
-  // Créer un objet utilisateur avec les données reçues
-  const newUser = {
-    nom: nom,
-    prenom: prenom,
-    email: email
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname,'index.html'));
+});
+
+// Route POST pour ajouter une offre
+app.post('/ajouter-offre', (req, res) => {
+  const data = req.body; // Récupérer toutes les données de la requête
+
+  // Traiter les données ici
+  const newOfferData = {
+    id: uniqid(),
+    intitule: data.intitule,
+    description: data.description,
+    dateCreation: data.dateCreation,
+    dateActualisation: data.dateActualisation,
+    lieuTravail: data.lieuTravail,
+    romeCode: data.romeCode,
+    romeLibelle: data.romeLibelle,
+    appellationLibelle: data.appellationlibelle,
+    entreprise: data.entreprise,
+    typeContrat: data.typeContrat,
+    typeContratLibelle: data.typeContratLibelle,
+    natureContrat: data.natureContrat,
+    experienceExige: data.experienceExige,
+    experienceLibelle: data.experienceLibelle,
+    formations: data.formations,
+    langues: data.langues,
+    competences: data.competences,
+    salaire: data.salaire,
+    dureeTravailLibelle: data.dureeTravailLibelle,
+    dureeTravailLibelleConverti: data.dureeTravailLibelleConverti,
+    alternance: data.alternance,
+    contact: data.contact,
+    nombrePostes: data.nombrePostes,
+    accessibleTH: data.accessibleTH,
+    qualificationCode: data.qualificationCode,
+    qualificationLibelle: data.qualificationLibelle,
+    codeNAF: data.codeNAF,
+    secteurActivite: data.secteurActivite,
+    secteurActiviteLibelle: data.secteurActiviteLibelle,
+    origineOffre: data.origineOffre
   };
 
   // Lire le contenu actuel du fichier JSON
-  const usersData = JSON.parse(readFileSync('Users.json', 'utf-8'));
- // Lire le contenu actuel du fichier JSON
+  const offersData = JSON.parse(fs.readFileSync(filePath));
 
- // Vérifier si un utilisateur avec le même email existe déjà
- const existingUser = usersData.find(user => user.email === email);
- if (existingUser) {
-   return res.status(400).send('Un utilisateur avec cet email existe déjà.');
- }
-
-  // Ajouter le nouvel utilisateur à la liste des utilisateurs
-  usersData.push(newUser);
+  // Ajouter la nouvelle offre à la liste des offres
+  offersData.push(newOfferData);
 
   // Écrire les données mises à jour dans le fichier JSON
-  writeFileSync('Users.json', JSON.stringify(usersData));
+  fs.writeFileSync(filePath, JSON.stringify(offersData, null, 2));
 
-  res.send('Données utilisateur ajoutées avec succès !');
+  res.send('Données de l\'offre ajoutées avec succès !');
 });
 
+app.get('/afficher', (req, res) => {
 
-app.delete('/supprimer-utilisateur/:email', (req, res) => {
-  const email = req.params.email;
-
-  // Lire le contenu actuel du fichier JSON
-  let usersData = JSON.parse(readFileSync('Users.json', 'utf-8'));
-
-  // Filtrer les utilisateurs pour supprimer celui avec l'email spécifié
-  usersData = usersData.filter(user => user.email !== email);
-
-  // Écrire les données mises à jour dans le fichier JSON
-  writeFileSync('Users.json', JSON.stringify(usersData));
-
-  res.send(`Utilisateur avec l'email ${email} supprimé avec succès !`);
+  const offre = JSON.parse(fs.readFileSync(filePath));
+  res.json(offre);
 });
+
+app.use('/public/css', express.static(path.join(__dirname, 'public/css'), { 'extensions': ['css'] }));
+
 
 app.listen(port, () => {
   console.log(`Serveur en cours d'exécution sur http://localhost:${port}`);

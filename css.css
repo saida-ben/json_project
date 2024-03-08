@@ -170,23 +170,77 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 999;
-          }
-          .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             background-color: #fff;
             border: 1px solid #ccc;
             padding: 20px;
             z-index: 1000;
-            width: 700px;
+            width: 60%;
+            height: 80%;
+            overflow-y: auto; /* Si nécessaire, ajoutez une barre de défilement verticale */
+            display: flex; /* Assurez-vous que le contenu de la fenêtre modale soit centré */
+            justify-content: center; /* Centrez horizontalement le contenu */
+            align-items: center; /* Centrez verticalement le contenu */
+          }
+          
+          form {
+            max-width: 80%;
+            margin: 0 auto; /* Centrer le formulaire */
+          }
+          
+          label {
+            margin-bottom: 8px; /* Augmentez l'espacement entre les étiquettes */
+            display: inline-block; /* Assurez-vous que les étiquettes sont sur la même ligne que les champs */
+          }
+          
+          input[type="text"], /* Modifiez également les autres types de champs selon vos besoins */
+          input[type="email"],
+          input[type="number"],
+          textarea,
+          select {
+            width: calc(100% - 16px); /* Ajustez la largeur des champs en tenant compte de la marge */
+            padding: 8px;
+            border: 1px solid #ccc; /* Ajoutez une bordure aux champs */
+            border-radius: 4px; /* Arrondissez les coins des champs */
+            margin-bottom: 16px; /* Augmentez l'espacement entre les champs */
+            box-sizing: border-box; /* Assurez-vous que la largeur inclut la bordure */
+          }
+          
+          button[type="submit"] {
+            background-color: #007bff; /* Couleur bleue pour le bouton "Soumettre" */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px; /* Arrondissez les coins du bouton */
+            transition: background-color 0.3s ease; /* Transition en douceur */
+          }
+          
+          button[type="submit"]:hover {
+            background-color: #0056b3; /* Couleur de survol plus foncée */
+          }
+          
+          fieldset {
+            border: none; /* Supprimez la bordure par défaut du fieldset */
+            padding: 0;
+          }
+          
+          legend {
+            font-weight: bold; /* Rendez le légende en gras */
+            margin-bottom: 8px; /* Augmentez l'espacement entre la légende et le reste du formulaire */
+          }
+          
+          /* Ajoutez des styles de survol pour les liens, s'ils sont inclus dans le formulaire */
+          form a {
+            color: #007bff;
+            transition: color 0.3s ease;
+          }
+          
+          form a:hover {
+            color: #0056b3;
           }
           
           #contenu {

@@ -25,14 +25,159 @@
     <div id="contenu">
       <h2>Ajouter un utilisateur</h2>
       <form id="userForm">
-        <label for="nom">Nom:</label>
-        <input type="text" id="nom" required/><br/>
-        <label for="prenom">Prénom:</label>
-        <input type="text" id="prenom" required/><br/>
-        <label for="email">Email:</label>
-        <input type="email" id="email" required/><br/>
-        <button type="submit">Ajouter</button>
-      </form>
+          <label for="intitule">Intitulé :</label>
+          <input type="text" id="intitule" name="intitule" ><br>
+          <label for="description">Description :</label>
+          <textarea id="description" name="description" ></textarea><br>
+          <label for="dateCreation">Date de création :</label>
+          <input type="date" id="dateCreation" name="dateCreation" ><br>
+          <label for="dateActualisation">Date d'actualisation :</label>
+          <input type="date" id="dateActualisation" name="dateActualisation" ><br>
+          <label for="lieuTravail">Lieu de travail :</label>
+          <input type="text" id="lieuTravail" name="lieuTravail" ><br>
+          <label for="romeCode">Code ROME :</label>
+          <input type="text" id="romeCode" name="romeCode" ><br>
+          <label for="romeLibelle">Libellé ROME :</label>
+          <input type="text" id="romeLibelle" name="romeLibelle" ><br>
+          <label for="entreprise">Entreprise :</label>
+          <input type="text" id="entreprise" name="entreprise" ><br>
+          <label for="typeContrat">Type de contrat :</label>
+          <input type="text" id="typeContrat" name="typeContrat" ><br>
+          <label for="natureContrat">Nature du contrat :</label>
+          <input type="text" id="natureContrat" name="natureContrat" ><br>
+          <label for="experienceExige">Expérience exigée :</label>
+          <input type="text" id="experienceExige" name="experienceExige" ><br>
+          <label for="experienceLibelle">Libellé de l'expérience :</label>
+          <input type="text" id="experienceLibelle" name="experienceLibelle" ><br>
+          <label for="formations">Formations :</label>
+          <input type="text" id="formations" name="formations" ><br>
+          <label for="langues">Langues :</label> <!-- Ajoutez d'autres champs ici -->
+          <label for="langues_libelle">Langues :</label>
+          <input type="text" id="langues_libelle" name="langues_libelle" ><br>
+          <label for="langues_exigence">Exigence langues :</label>
+          <input type="text" id="langues_exigence" name="langues_exigence" ><br>
+          <label for="competences">Compétences :</label>
+          <input type="text" id="competences" name="competences" ><br>
+          <label for="salaire">Salaire :</label>
+          <input type="text" id="salaire" name="salaire" ><br>
+          <label for="dureeTravailLibelle">Durée du travail :</label>
+          <input type="text" id="dureeTravailLibelle" name="dureeTravailLibelle" ><br>
+          <label for="dureeTravailLibelleConverti">Durée du travail convertie :</label>
+          <input type="text" id="dureeTravailLibelleConverti" name="dureeTravailLibelleConverti" ><br>
+          <label for="alternance">Alternance :</label>
+          <input type="text" id="alternance" name="alternance" ><br>
+          <label for="contact">Contact :</label>
+          <input type="text" id="contact" name="contact" ><br>
+          <label for="nombrePostes">Nombre de postes :</label>
+          <input type="text" id="nombrePostes" name="nombrePostes" ><br>
+          <label for="accessibleTH">Accessible aux TH :</label>
+          <input type="text" id="accessibleTH" name="accessibleTH" ><br>
+          <label for="qualificationCode">Code de qualification :</label>
+          <input type="text" id="qualificationCode" name="qualificationCode" ><br>
+          <label for="qualificationLibelle">Libellé de qualification :</label>
+          <input type="text" id="qualificationLibelle" name="qualificationLibelle" ><br>
+          <label for="codeNAF">Code NAF :</label>
+          <input type="text" id="codeNAF" name="codeNAF" ><br>
+          <label for="secteurActivite">Secteur d'activité :</label>
+          <input type="text" id="secteurActivite" name="secteurActivite" ><br>
+          <label for="secteurActiviteLibelle">Libellé de secteur d'activité :</label>
+          <input type="text" id="secteurActiviteLibelle" name="secteurActiviteLibelle" ><br>
+          <label for="origineOffre">Origine de l'offre :</label>
+          <input type="text" id="origineOffre" name="origineOffre" ><br>
+         
+          <label for="lieu_libelle">lieu_libelle :</label>
+          <input type="text" id="lieu_libelle" name="lieu_libelle" ><br>
+          
+          <label for="latitude">latitude :</label>
+          <input type="text" id="latitude" name="latitude" ><br>
+          
+          <label for="codePostal">codePostal :</label>
+          <input type="text" id="codePostal" name="codePostal" ><br>
+          
+          <label for="longitude">commune :</label>
+          <input type="text" id="commune" name="commune" ><br>
+          
+          <label for="appellationLibelle">appellationLibelle :</label>
+          <input type="text" id="appellationLibelle" name="appellationLibelle" ><br>
+          
+          <label for="entreprise_nom">entreprise_nom :</label>
+          <input type="text" id="entreprise_nom" name="entreprise_nom" ><br>
+          
+          <label for="entrepriseAdaptee">entrepriseAdaptee :</label>
+          <input type="text" id="entrepriseAdaptee" name="entrepriseAdaptee" ><br>
+          
+          <label for="longitude">longitude :</label>
+          <input type="text" id="longitude" name="longitude" ><br>
+          
+          <label for="typeContratLibelle">typeContratLibelle :</label>
+          <input type="text" id="typeContratLibelle" name="typeContratLibelle" ><br>
+          
+          <label for="formation_codeFormation">formation_codeFormation :</label>
+          <input type="text" id="formation_codeFormation" name="formation_codeFormation" ><br>
+          
+          <label for="formation_domaineLibelle">formation_domaineLibelle :</label>
+          <input type="text" id="formation_domaineLibelle" name="formation_domaineLibelle" ><br>
+          
+          <label for="formation_exigence">formation_exigence :</label>
+          <input type="text" id="formation_exigence" name="formation_exigence" ><br>
+          
+          <label for="langue_exigence">langue_exigence :</label>
+          <input type="text" id="langue_exigence" name="langue_exigence" ><br>
+          
+          <label for="langue_exigence">competence_code :</label>
+          <input type="text" id="langue_exigence" name="langue_exigence" ><br>
+          
+          <label for="langue_exigence">competence_libelle :</label>
+          <input type="text" id="langue_exigence" name="langue_exigence" ><br>
+          
+          <label for="competence_exigence">competence_exigence :</label>
+          <input type="text" id="competence_exigence" name="competence_exigence" ><br>
+          
+          <label for="salaire_libelle">salaire_libelle :</label>
+          <input type="text" id="salaire_libelle" name="salaire_libelle" ><br>
+          
+          <label for="contact_nom">contact_nom :</label>
+          <input type="text" id="contact_nom" name="contact_nom" ><br>
+          
+          <label for="contact_coordonnees1">contact_coordonnees1 :</label>
+          <input type="text" id="contact_coordonnees1" name="contact_coordonnees1" ><br>
+          
+          <label for="contact_coordonnees2">contact_coordonnees2 :</label>
+          <input type="text" id="contact_coordonnees2" name="contact_coordonnees2" ><br>
+          
+          <label for="contact_coordonnees2">contact_coordonnees2 :</label>
+          <input type="text" id="contact_coordonnees2" name="contact_coordonnees2" ><br>
+          
+          <label for="contact_coordonnees3">contact_coordonnees3 :</label>
+          <input type="text" id="contact_coordonnees3" name="contact_coordonnees3" ><br>
+          
+          <label for="contact_coordonnees3">contact_coordonnees3 :</label>
+          <input type="text" id="contact_coordonnees3" name="contact_coordonnees3" ><br>
+          
+          <label for="origineOffre_origine">origineOffre_origine :</label>
+          <input type="text" id="origineOffre_origine" name="origineOffre_origine" ><br>
+          
+          <label for="formation_niveauLibelle">formation_niveauLibelle :</label>
+          <input type="text" id="formation_niveauLibelle" name="formation_niveauLibelle" ><br>
+          
+          <label for="formation_commentaire">formation_commentaire :</label>
+          <input type="text" id="formation_commentaire" name="formation_commentaire" ><br>
+          
+          <label for="langue_libelle">langue_libelle :</label>
+          <input type="text" id="langue_libelle" name="langue_libelle" ><br>
+          
+          <label for="competence_code">competence_code :</label>
+          <input type="text" id="competence_code" name="competence_code" ><br>
+          
+          <label for="competence_libelle">competence_libelle :</label>
+          <input type="text" id="competence_libelle" name="competence_libelle" ><br>
+          
+          <label for="origineOffre_urlOrigine">origineOffre_urlOrigine :</label>
+          <input type="text" id="origineOffre_urlOrigine" name="origineOffre_urlOrigine" ><br>
+          
+          <button type="submit">Ajouter</button>
+        </form>
+
       <input type="button" value="Fermer" onclick="cacherPopupForm()"/>
       <hr/>
       <div id="resultat"></div>
@@ -40,98 +185,69 @@
   </div>
 
   <script>
-    // Fonction pour ajouter un utilisateur
-    function ajouterUtilisateur(event) {
-      event.preventDefault(); // Empêcher le rechargement de la page
-  
-      // Récupérer les valeurs du formulaire
-      var nom = document.getElementById('nom').value;
-      var prenom = document.getElementById('prenom').value;
-      var email = document.getElementById('email').value;
-  
-      // Créer un objet utilisateur
-      var newUser = {
-        nom: nom,
-        prenom: prenom,
-        email: email
-      };
-  
-      // Envoi des données au serveur
-      fetch('http://localhost:3000/ajouter-donnee1', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newUser)
-      })
-      .then(response => response.text())
-      .then(data => {
-        console.log(data); // Afficher la réponse du serveur dans la console
-        // Effacer le formulaire après l'ajout
-        document.getElementById('userForm').reset();
-        // Actualiser les données dans le tableau après ajout
-        afficherDonneesUtilisateur();
-      })
-      .catch(error => console.error('Erreur:', error));
-    }
-  
-    // Événement de soumission du formulaire pour ajouter un utilisateur
-    document.getElementById('userForm').addEventListener('submit', ajouterUtilisateur);
-
-    function afficherPopupForm() {
-      var popupForm = document.getElementById("popupForm");
-      popupForm.style.display = "block";
+    // Fonction pour générer un identifiant unique
+    function uniqid() {
+        return Math.random().toString(36).substr(2, 9);
     }
     
-    function cacherPopupForm() {
-      var popupForm = document.getElementById("popupForm");
-      popupForm.style.display = "none";
-    }
-    function afficherDonneesUtilisateur() {
-  fetch('Users.json') // Charger le fichier JSON
-    .then(response => response.json()) // Convertir la réponse en JSON
-    .then(data => {
-      const userTableBody = document.getElementById('userTableBody');
-
-      // Effacer le contenu précédent de la table
-      userTableBody.innerHTML = '';
-
-      // Parcourir les données utilisateur et ajouter chaque utilisateur à la table
-      data.forEach(user => {
-        const newRow = document.createElement('tr');
-        newRow.innerHTML = `
-          <td>${user.nom}</td>
-          <td>${user.prenom}</td>
-          <td>${user.email}</td>
-          <td><button onclick="supprimerUtilisateur('${user.email}')">Supprimer</button></td>
-        `;
-        userTableBody.appendChild(newRow);
-      });
-    })
-    .catch(error => console.error('Erreur lors du chargement des données :', error));
-}
-
-    // Fonction pour supprimer un utilisateur par email
-    function supprimerUtilisateur(email) {
-      fetch(`http://localhost:3000/supprimer-utilisateur/${encodeURIComponent(email)}`, {
-        method: 'DELETE',
-      })
-      .then(response => {
-        if (response.ok) {
-          console.log(`Utilisateur avec l'email ${email} supprimé avec succès.`);
-          // Actualiser les données après suppression
-          afficherDonneesUtilisateur();
-        } else {
-          console.error(`Une erreur s'est produite lors de la suppression de l'utilisateur avec l'email ${email}.`);
-        }
-      })
-      .catch(error => console.error('Erreur lors de la suppression de l\'utilisateur :', error));
+    // Fonction pour ajouter les données du formulaire au fichier JSON
+    function ajouterAuFichierJSON(data) {
+        // Chemin vers le fichier JSON existant
+        const cheminFichierJSON = 'offres.json';
+    
+        // Lire le contenu du fichier JSON
+        fetch(cheminFichierJSON)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Impossible de lire le fichier JSON');
+            }
+            return response.json();
+        })
+        .then(donneesExistantes => {
+            // Si le fichier JSON est vide, initialiser avec un tableau vide
+            if (!donneesExistantes) {
+                donneesExistantes = [];
+            }
+            
+            // Ajouter les nouvelles données
+            donneesExistantes.push(data);
+    
+            // Convertir les données JavaScript en chaîne JSON
+            let donneesMisesAJour = JSON.stringify(donneesExistantes, null, 2);
+    
+            // Écrire les données mises à jour dans le fichier JSON
+            fetch(cheminFichierJSON, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: donneesMisesAJour
+            })
+            .then(() => console.log("Données ajoutées avec succès au fichier JSON."))
+            .catch(error => console.error("Erreur lors de l'écriture dans le fichier JSON :", error));
+        })
+        .catch(error => console.error("Erreur lors de la lecture ou du traitement du fichier JSON :", error));
     }
     
-    // Appeler la fonction pour afficher les données lors du chargement de la page
-    window.onload = afficherDonneesUtilisateur;
-
-  </script>
+    // Écouteur d'événement pour la soumission du formulaire
+    document.getElementById('userForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêcher la soumission du formulaire par défaut
+    
+        // Capturer les données saisies dans le formulaire
+        let formData = new FormData(this);
+    
+        // Créer un objet avec les données du formulaire
+        let data = {};
+        formData.forEach(function(value, key){
+            data[key] = value;
+        });
+    
+        // Ajouter les données au fichier JSON
+        ajouterAuFichierJSON(data);
+    });
+    
+    </script>
+    
   
 </body>
 </html>

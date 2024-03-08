@@ -1,0 +1,227 @@
+[
+  {
+    "id": "169XZJP",
+    "intitule": "TAF 2024 Développeur PHP Symfony (H/F)",
+    "description": "Entreprise présente le mercredi 06 mars au salon TAF Hérault au Parc des expositions de Pérols.\n\nVous maîtrisez la technologie Symfony et êtes capable de transmettre les bonnes pratiques de développement auprès d'une équipe technique.\nDescriptif du poste (missions, activités, compétences spécifiques) :\nConception d'applications et de nouveaux d'outils back-end dans l'écosystème Symfony\nDéfinition des choix techniques pour créer des solutions pérennes et évolutives\nAccompagner les membres de l'équipe dans leur montée en compétence en Symfony\nOptimisation de performances",
+    "dateCreation": "2024-02-23T09:25:51.000Z",
+    "dateActualisation": "2024-02-23T09:25:51.000Z",
+    "lieuTravail": {
+      "libelle": "34 - MONTPELLIER",
+      "latitude": 43.610476,
+      "longitude": 3.87048,
+      "codePostal": "34000",
+      "commune": "34172"
+    },
+    "romeCode": "M1805",
+    "romeLibelle": "Études et développement informatique",
+    "appellationlibelle": "Développeur / Développeuse informatique",
+    "entreprise": {
+      "nom": "PANDA SERVICES MONTPELLIER",
+      "entrepriseAdaptee": false
+    },
+    "typeContrat": "CDI",
+    "typeContratLibelle": "Contrat à durée indéterminée",
+    "natureContrat": "Contrat travail",
+    "experienceExige": "E",
+    "experienceLibelle": "3 ans",
+    "formations": [
+      {
+        "codeFormation": "31054",
+        "domaineLibelle": "informatique et systèmes d'information",
+        "niveauLibelle": "Bac+5 et plus ou équivalents",
+        "commentaire": "BAC + 4 ou BAC+5",
+        "exigence": "S"
+      }
+    ],
+    "langues": [
+      {
+        "libelle": "Anglais",
+        "exigence": "E"
+      }
+    ],
+    "competences": [
+      {
+        "code": "109881",
+        "libelle": "PHP",
+        "exigence": "S"
+      },
+      {
+        "code": "300688",
+        "libelle": "Application web",
+        "exigence": "S"
+      },
+      {
+        "code": "109846",
+        "libelle": "Concevoir une application web",
+        "exigence": "S"
+      },
+      {
+        "code": "300188",
+        "libelle": "Rédiger un cahier des charges, des spécifications techniques",
+        "exigence": "S"
+      },
+      {
+        "code": "300242",
+        "libelle": "Déterminer des mesures correctives",
+        "exigence": "S"
+      },
+      {
+        "code": "300366",
+        "libelle": "Recueillir et analyser les besoins client",
+        "exigence": "S"
+      }
+    ],
+    "salaire": {
+      "libelle": "Annuel de 35000,00 Euros à 38000,00 Euros sur 12 mois"
+    },
+    "dureeTravailLibelle": "39H Travail en journée",
+    "dureeTravailLibelleConverti": "Temps plein",
+    "alternance": false,
+    "contact": {
+      "nom": "PANDA SERVICES MONTPELLIER - Mme 06 mars 09h-17h Salon TAF",
+      "coordonnees1": "Salon TAF , Parc des expositions",
+      "coordonnees2": "7 RTE de la foire",
+      "coordonnees3": "34470 PEROLS"
+    },
+    "nombrePostes": 1,
+    "accessibleTH": false,
+    "qualificationCode": "6",
+    "qualificationLibelle": "Employé qualifié",
+    "codeNAF": "62.02A",
+    "secteurActivite": "62",
+    "secteurActiviteLibelle": "Conseil en systèmes et logiciels informatiques",
+    "origineOffre": {
+      "origine": "1",
+      "urlOrigine": "https://candidat.pole-emploi.fr/offres/recherche/detail/169XZJP"
+    }
+  },
+  {
+    "intitule": "ss",
+    "description": "gghhh",
+    "dateCreation": "",
+    "dateActualisation": "",
+    "lieuTravail": "",
+    "romeCode": "",
+    "romeLibelle": "",
+    "entreprise": "",
+    "typeContrat": "",
+    "natureContrat": "",
+    "experienceExige": "",
+    "experienceLibelle": "",
+    "formations": "",
+    "langues_libelle": "",
+    "langues_exigence": "",
+    "competences": "",
+    "salaire": "",
+    "dureeTravailLibelle": "",
+    "dureeTravailLibelleConverti": "",
+    "alternance": "",
+    "contact": "",
+    "nombrePostes": "",
+    "accessibleTH": "",
+    "qualificationCode": "",
+    "qualificationLibelle": "",
+    "codeNAF": "",
+    "secteurActivite": "",
+    "secteurActiviteLibelle": "",
+    "origineOffre": "",
+    "lieu_libelle": "",
+    "latitude": "",
+    "codePostal": "",
+    "commune": "",
+    "appellationLibelle": "",
+    "entreprise_nom": "",
+    "entrepriseAdaptee": "",
+    "longitude": "",
+    "typeContratLibelle": "",
+    "formation_codeFormation": "",
+    "formation_domaineLibelle": "",
+    "formation_exigence": "",
+    "langue_exigence": [
+      "",
+      "",
+      ""
+    ],
+    "competence_exigence": "",
+    "salaire_libelle": "",
+    "contact_nom": "",
+    "contact_coordonnees1": "",
+    "contact_coordonnees2": [
+      "",
+      ""
+    ],
+    "contact_coordonnees3": [
+      "",
+      ""
+    ],
+    "origineOffre_origine": "",
+    "formation_niveauLibelle": "",
+    "formation_commentaire": "",
+    "langue_libelle": "",
+    "competence_code": "",
+    "competence_libelle": "",
+    "origineOffre_urlOrigine": ""
+  },
+  {
+    "id": "it6w9j8lthppjax",
+    "intitule": "",
+    "description": "",
+    "dateCreation": "",
+    "dateActualisation": "",
+    "lieuTravail": "",
+    "romeCode": "",
+    "romeLibelle": "",
+    "entreprise": "",
+    "typeContrat": "",
+    "typeContratLibelle": "",
+    "natureContrat": "",
+    "experienceExige": "",
+    "experienceLibelle": "",
+    "formations": "",
+    "competences": "",
+    "salaire": "",
+    "dureeTravailLibelle": "",
+    "dureeTravailLibelleConverti": "",
+    "alternance": "",
+    "contact": "",
+    "nombrePostes": "",
+    "accessibleTH": "",
+    "qualificationCode": "",
+    "qualificationLibelle": "",
+    "codeNAF": "",
+    "secteurActivite": "",
+    "secteurActiviteLibelle": "",
+    "origineOffre": ""
+  },
+  {
+    "id": "it6w9j8lthpqmtl",
+    "intitule": "ssweee",
+    "description": "",
+    "dateCreation": "2024-03-05",
+    "dateActualisation": "2024-03-05",
+    "lieuTravail": "",
+    "romeCode": "",
+    "romeLibelle": "",
+    "entreprise": "",
+    "typeContrat": "",
+    "typeContratLibelle": "",
+    "natureContrat": "",
+    "experienceExige": "",
+    "experienceLibelle": "",
+    "formations": "",
+    "competences": "",
+    "salaire": "",
+    "dureeTravailLibelle": "",
+    "dureeTravailLibelleConverti": "",
+    "alternance": "",
+    "contact": "",
+    "nombrePostes": "",
+    "accessibleTH": "",
+    "qualificationCode": "",
+    "qualificationLibelle": "",
+    "codeNAF": "",
+    "secteurActivite": "",
+    "secteurActiviteLibelle": "",
+    "origineOffre": ""
+  }
+]
