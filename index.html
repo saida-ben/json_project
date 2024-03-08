@@ -30,6 +30,9 @@
         background-color: #0056b3; /* Bleu plus foncé au survol */
         border-color: #0056b3; /* Bordure bleue plus foncée au survol */
     }
+    .card-link {
+            text-decoration: none;
+        }
 </style>
 <body>
     <!-- Navigation-->
@@ -104,30 +107,39 @@
             </div>
         </div>
     </div>
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Modifier Offre</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-modifier">
+                    <input type="hidden" id="offre-id" name="offre-id" value="">
+                    <div class="mb-3">
+                        <label for="intitule" class="form-label">Intitulé</label>
+                        <input type="text" class="form-control" id="intitule" name="intitule">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                    <!-- Ajoutez d'autres champs si nécessaire -->
+                    <button type="submit" class="btn btn-primary">Modifier</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script>
-        function supprimerOffre(offreId) {
-        // Effectuez une requête POST vers le serveur Express pour supprimer l'offre
-        fetch('/supprimer', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ id: offreId }) // Envoyez l'identifiant de l'offre à supprimer
-        })
-        .then(response => {
-            if (response.ok) {
-                // Mettez à jour l'interface utilisateur ou rechargez la page si nécessaire
-                location.reload(); // Rechargez la page pour afficher les changements
-            } else {
-                console.error('Erreur lors de la suppression de l\'offre');
-            }
-        })
-        .catch(error => console.error('Erreur lors de la suppression de l\'offre:', error));
-    }
+     
           // Effectuer une requête GET vers le serveur Express pour obtenir les données des offres
     fetch('/afficher') // Utilisez l'URL de la route Express que vous avez créée
         .then(response => response.json())
@@ -141,13 +153,14 @@
                 const card = document.createElement('div');
                 card.classList.add('col', 'mb-5');
                 card.innerHTML = `
-                    <div class="card h-100">
+                 
+                    <div class="card h-100" >
                        
                         <!-- Product image-->
                         <img class="card-img-top" src="${offre.image}" alt="Product image" />
                         <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
+                        <div class="card-body p-4" >
+                            <div class="text-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <!-- Product name-->
                                 <h5 class="fw-bolder">${offre.intitule}</h5>
                                 <!-- Product date de création-->
@@ -158,11 +171,16 @@
                                 <p class="offre-lieuTravail" style="display:none;">${JSON.stringify(offre.lieuTravail)}</p>
                             </div>
                         </div>
+                
                         <!-- Product actions-->
+                                                
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <button class="btn btn-outline-dark mt-auto view-options-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">View options</button>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-outline-danger me-2" onclick="confirmerSuppression('${offre.id}')">Supprimer</button>
+                                <button class="btn btn-outline-primary" onclick="modifier('${offre.id}')">Modifier</button>
                             </div>
+                            </div>
+
                         </div>
                     </div>
                 `;
@@ -179,6 +197,84 @@
             document.getElementById('modal-libelle').textContent = lieuTravail.libelle;
             document.getElementById('modal-codePostal').textContent = lieuTravail.codePostal;
         }
+    });
+    function confirmerSuppression(offreId) {
+        // Boîte de dialogue de confirmation
+        if (confirm("Voulez-vous vraiment supprimer cette offre ?")) {
+            // Si l'utilisateur clique sur OK, appeler la fonction supprimerOffre
+            supprimerOffre(offreId);
+        }
+    }
+    function supprimerOffre(offreId) {
+        // Effectuez une requête POST vers le serveur Express pour supprimer l'offre
+        fetch(`/offres/${offreId}`, {
+        method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: offreId }) // Envoyez l'identifiant de l'offre à supprimer
+        })
+        .then(response => {
+            if (response.ok) {
+                // Mettez à jour l'interface utilisateur ou rechargez la page si nécessaire
+                location.reload(); // Rechargez la page pour afficher les changements
+            } else {
+                console.error('Erreur lors de la suppression de l\'offre');
+            }
+        })
+        .catch(error => console.error('Erreur lors de la suppression de l\'offre:', error));
+    }
+
+    function modifier(offreId) {
+        // Effectuez une requête GET vers le serveur Express pour obtenir les détails de l'offre à modifier
+        fetch(`/offres/${offreId}`)
+            .then(response => response.json())
+            .then(offre => {
+                // Remplissez le formulaire de modification avec les détails de l'offre
+                document.getElementById('offre-id').value = offre.id;
+                document.getElementById('intitule').value = offre.intitule;
+                document.getElementById('description').value = offre.description;
+                // Remplissez d'autres champs de formulaire si nécessaire
+                // Affichez le modal de modification
+                var myModal = new bootstrap.Modal(document.getElementById('exampleModal2'));
+                myModal.show();
+            })
+            .catch(error => console.error('Erreur lors de la récupération des détails de l\'offre à modifier:', error));
+    }
+
+    // Écoutez l'événement submit du formulaire de modification
+    document.getElementById('form-modifier').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêcher la soumission par défaut du formulaire
+        const offreId = document.getElementById('offre-id').value;
+        const intitule = document.getElementById('intitule').value;
+        const description = document.getElementById('description').value;
+        // Récupérez les autres valeurs du formulaire si nécessaire
+
+        // Effectuez une requête PUT vers le serveur Express pour modifier l'offre
+        fetch(`/offres/${offreId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ 
+                id: offreId,
+                intitule: intitule,
+                description: description
+                // Ajoutez d'autres champs à mettre à jour ici si nécessaire
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                // Fermez le modal de modification
+                var myModal = new bootstrap.Modal(document.getElementById('exampleModal2'));
+                myModal.hide();
+                // Mettez à jour l'interface utilisateur ou rechargez la page si nécessaire
+                location.reload(); // Rechargez la page pour afficher les changements
+            } else {
+                console.error('Erreur lors de la modification de l\'offre');
+            }
+        })
+        .catch(error => console.error('Erreur lors de la modification de l\'offre:', error));
     });
 </script>
 
